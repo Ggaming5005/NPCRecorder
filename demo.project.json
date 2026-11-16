@@ -1,0 +1,44 @@
+{
+  "name": "NPCRecorderDemo",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "NPCRecorder": {
+        "$path": "src"
+      },
+      "NPCRecorderExamples": {
+        "$className": "Folder",
+        "Demo": {
+          "$path": "examples/Demo.luau"
+        },
+        "DemoScene": {
+          "$path": "examples/DemoScene.luau"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "RunDemo": {
+        "$path": "examples/RunDemo.server.luau"
+      }
+    },
+    "Workspace": {
+      "Spawn": {
+        "$className": "SpawnLocation",
+        "$properties": {
+          "Anchored": true,
+          "Position": [
+            150,
+            4,
+            20
+          ],
+          "Size": [
+            6,
+            1,
+            6
+          ],
+          "Transparency": 1
+        }
+      }
+    }
+  }
+}

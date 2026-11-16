@@ -1,0 +1,4 @@
+dist/
+*.lock
+*.zip
+media/*.mp4

@@ -1,0 +1,31 @@
+name: Check
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned tools
+        run: |
+          curl --fail --location --retry 3 https://github.com/luau-lang/luau/releases/download/0.747/luau-ubuntu.zip -o /tmp/luau.zip
+          unzip -q /tmp/luau.zip -d /tmp/luau
+          chmod +x /tmp/luau/luau*
+          curl --fail --location --retry 3 https://github.com/rojo-rbx/rojo/releases/download/v7.7.0/rojo-7.7.0-linux-x86_64.zip -o /tmp/rojo.zip
+          unzip -q /tmp/rojo.zip -d /tmp/rojo
+          chmod +x /tmp/rojo/rojo
+      - name: Test bounded history and validation
+        run: /tmp/luau/luau tests/run.luau
+      - name: Analyze portable core
+        run: /tmp/luau/luau-analyze src/Core.luau
+      - name: Compile and package
+        run: |
+          /tmp/luau/luau-compile --null src/*.luau plugin/*.luau examples/*.luau tests/*.luau
+          mkdir -p dist
+          /tmp/rojo/rojo build default.project.json -o dist/NPCRecorder.rbxm
+          /tmp/rojo/rojo build plugin.project.json -o dist/NPCRecorderStudio.rbxm
+          /tmp/rojo/rojo build demo.project.json -o dist/NPCRecorderDemo.rbxlx

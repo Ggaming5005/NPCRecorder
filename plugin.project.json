@@ -1,0 +1,15 @@
+{
+  "name": "NPCRecorderStudio",
+  "tree": {
+    "$path": "plugin",
+    "Runtime": {
+      "$path": "src"
+    },
+    "Demo": {
+      "$path": "examples/Demo.luau"
+    },
+    "DemoScene": {
+      "$path": "examples/DemoScene.luau"
+    }
+  }
+}
