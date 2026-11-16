@@ -2,6 +2,10 @@
 
 Revisit an NPC's decisions with the context your code actually recorded.
 
+![NPCRecorder inspecting a recorded guard decision](media/preview.jpg)
+
+[Watch the Studio demo](https://github.com/Ggaming5005/NPCRecorder/releases/download/v0.1.0/NPCRecorder-demo.mp4).
+
 Add small hooks to your existing NPC system, then inspect a bounded history of state, reason, position, target and route points in Studio. Scrub the timeline, jump between decisions, filter an entity or state, and see the recorded position and path in the world.
 
 NPCRecorder observes explicit hooks. It does not infer intent, control your NPCs, record the entire game, or rewind the simulation.

@@ -18,6 +18,10 @@ All runtime, plugin, example and test Luau files compiled locally. Rojo 7.7.0 bu
 
 The live guard example produced 234 sampled/decision events by 33 seconds, including Unspecified, Patrol, Chase and Search, with `LastError` nil. These came from its actual moving scene and raycast-driven state changes. Edit mode reported both IsClient and IsServer true; the corrected explicit Edit/server gating was verified to enable recording there.
 
-Play Server publication, running-client/production inert behavior, actual clipboard transfer across stopping Play, publication-size failure UI and long-duration memory behavior have not yet been exercised by these checks. The pure core's immutability was tested separately from the native integration.
+An isolated Play Server check published 76 events containing Patrol, Chase and Search, with no recorder error. Repeated demo destruction removed the scene, session and update connection. A separate Play Client check verified that Track, Record, Start and Capture produced no session, events or connection.
+
+A 29-second 1280×720 H.264 clip shows the actual Edit-mode guard scene and recorded-history playback. Selected frames were visually reviewed.
+
+Production-server inert behavior, actual clipboard transfer across stopping Play, publication-size failure UI and long-duration memory behavior have not yet been exercised by these checks. The pure core's immutability was tested separately from the native integration.
 
 The implementation does not claim exhaustive engine compatibility, automatic intent inference, complete simulation replay, or measured production performance.
