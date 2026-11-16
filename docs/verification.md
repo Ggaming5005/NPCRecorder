@@ -10,7 +10,7 @@ Coverage includes chronological capacity eviction, independent entity budgets, a
 
 An independent regression reproduced same-time decisions returning an earlier state after sorting. The stable tie-order fix was rechecked using two interleaved entities and 2–30 equal-time decisions per entity; each returned the latest recorded state. Runtime review also checked dense bounded path validation before copying and rejection of unparented models before tracking.
 
-All runtime, plugin, example and test Luau files compiled locally. Rojo 7.7.0 built `dist/NPCRecorder.rbxm`, `dist/NPCRecorderStudio.rbxm` and `dist/NPCRecorderDemo.rbxlx`. The pinned GitHub workflow runs these checks; a hosted CI run has not yet been observed.
+All runtime, plugin, example and test Luau files compiled locally. Rojo 7.7.0 built `dist/NPCRecorder.rbxm`, `dist/NPCRecorderStudio.rbxm` and `dist/NPCRecorderDemo.rbxlx`. The pinned GitHub workflow also passed on Ubuntu: [initial source verification](https://github.com/Ggaming5005/NPCRecorder/actions/runs/43962419914). It compiles native test files but executes only the portable tests; Studio checks remain separate.
 
 ## Studio integration
 
